@@ -60,10 +60,11 @@ ylabel('适应度值','fontsize',12)
 
 %% 画出配送中心选址图
 %城市坐标
-city_coordinate=importdata('data/朝阳区p');
-carge=importdata('data/朝阳区c');
+city_coordinate=importdata('data/朝阳区p.txt');
+carge=importdata('data/朝阳区c.txt');
 
-my_len=size(city_coordinate)(1);
+my_len=size(city_coordinate);
+my_len=my_len(1);
 %找出最近配送点
 for i=1:my_len
     distance(i,:)=dist(city_coordinate(i,:),city_coordinate(bestchrom,:)');
